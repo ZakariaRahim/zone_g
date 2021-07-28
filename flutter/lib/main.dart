@@ -17,7 +17,33 @@ class _FirstRouteState extends State<FirstRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('Upload Data'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AdminScreen()));
+              },
+            ),
+            ListTile(
+              title: const Text('Item 2'),
+              onTap: () {
+                // Update the state of the app.
+              },
+            ),
+          ],
+        ),
+      ),
       body: HomePage(),
     );
   }
@@ -33,18 +59,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return AdminScreen();
+    return Container();
   }
 }
-// body: Center(
-//         child: (Container(
-//           child: ElevatedButton(
-//               child: Text('Click'),
-//               onPressed: () async {
-//                 var url = Uri.parse('http://10.0.2.2/api_ex/index.php');
-//                 var response = await http.get(url);
-//                 print(jsonDecode(response.body));
-//               }),
-//         )),
-//       ),
-//     );

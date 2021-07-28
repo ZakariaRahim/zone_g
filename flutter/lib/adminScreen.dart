@@ -25,17 +25,18 @@ class _AdminScreenState extends State<AdminScreen> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.orange[800],
-      height: 400.0,
-      width: 600,
+      height: double.maxFinite,
+      width: double.infinity,
       child: Center(
           child: Card(
         child: Column(
           children: [
             SizedBox(height: 20.0),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 100.0),
+                  // margin: EdgeInsets.only(left: 100.0),
                   width: 400,
                   child: ElevatedButton.icon(
                       onPressed: () async {
@@ -82,9 +83,10 @@ class _AdminScreenState extends State<AdminScreen> {
               height: 20.0,
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.only(left: 10.0),
+                  // margin: EdgeInsets.only(left: 10.0),
                   width: 400,
                   child: ElevatedButton.icon(
                       onPressed: () async {
@@ -98,6 +100,14 @@ class _AdminScreenState extends State<AdminScreen> {
                 ),
                 Text("$_fileSize"),
               ],
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Container(
+              // margin: EdgeInsets.only(left: 10.0),
+              width: 400,
+              child: ElevatedButton(onPressed: () {}, child: Text("Add")),
             ),
           ],
         ),
@@ -124,11 +134,7 @@ class _AdminScreenState extends State<AdminScreen> {
       setState(() {
         _fileSize = file.name.toString();
       });
-      // print(file.name);
-      // print(file.bytes);
-      // print(file.size);
-      // print(file.extension);
-      // print(file.path);
+    
     } else {
       // User canceled the picker
     }
