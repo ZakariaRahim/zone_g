@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:file_picker/file_picker.dart';
-import 'dart:io';
 
 class AdminScreen extends StatefulWidget {
   const AdminScreen({Key? key}) : super(key: key);
@@ -14,7 +13,7 @@ class AdminScreen extends StatefulWidget {
 class _AdminScreenState extends State<AdminScreen> {
   String imagePath = "";
   String _fileSize = "";
-  
+
   @override
   void initState() {
     super.initState();
@@ -91,7 +90,7 @@ class _AdminScreenState extends State<AdminScreen> {
                       onPressed: () async {
                         _fileFromStorage();
                       },
-                      icon: Icon(Icons.document_scanner_rounded),
+                      icon: Icon(Icons.plus_one), // replace icon later
                       label: Text("Select Specs")),
                 ),
                 SizedBox(

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'adminScreen.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
 
 void main() {
   runApp(MaterialApp(home: FirstRoute()));
